@@ -1,0 +1,67 @@
+@import '../../styles/breakpoints.scss';
+
+.card {
+    margin: 20px 0;
+    max-width: 200px;
+    border-radius: 10px;
+    background: #f7f2f2;
+    text-align: center;
+    @include breakpoint(xs) {
+        margin: 20px;
+    }
+    @include breakpoint(md) {
+        display: flex;
+        align-items: center;
+        max-width: unset;
+        padding-right: 20px;
+        text-align: left;
+    }
+    @include breakpoint(lg) {
+        cursor: pointer;
+        transition: 400ms;
+        outline: 2px solid transparent; 
+        &:hover {
+            transition: 400ms;
+            outline: 2px solid #b9b6b6; 
+        }
+    }
+    .imageWrapper {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        span {
+            border-radius: 10px;
+        }
+    }
+    .wrapper {
+        margin-bottom: 20px;
+        @include breakpoint(md) {
+            width: 310px;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+        .title {
+            margin: 5px 0 15px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: bold;
+            @include breakpoint(xs) {
+                font-size: 22px;
+                line-height: 28px;
+            }
+        }
+        .text {
+            margin: 5px 0;
+            font-size: 14px;
+            line-height: 18px;
+            @include breakpoint(xs) {
+                font-size: 18px;
+                line-height: 20px;
+            }
+            strong {
+                font-weight: bold;
+            }
+        }
+    }
+    
+}
