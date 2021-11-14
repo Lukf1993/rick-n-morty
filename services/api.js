@@ -20,6 +20,8 @@ export const getPage = (id) => {
     .catch((err) => console.log(err));
 };
 
+export const getEpisodes = (id) => get('episode', id);
+
 export const getAllCharacters = () => get('character');
 export const getSingleCharacter = (id) => get('character' , id);
 
