@@ -1,7 +1,8 @@
-import { FC } from 'react';
-import { getAllCharacters } from '../services/api';
+import { FC, useState } from 'react';
+import { getAllCharacters, getPage } from '../services/api';
 import { ICard, IInfo } from '../services/models/Default.interface';
 import { Card } from '../components/card/Card';
+import styles from '../styles/Home.module.scss';
 
 export async function getStaticProps() {
   try {
@@ -24,21 +25,40 @@ export async function getStaticProps() {
     };
   }
 }
+
+interface IPropsData {
+  info: IInfo
+  results: ICard[]
+}
 interface IProps {
-  data: {
-    info: IInfo
-    results: ICard[]
-  }
+  data: IPropsData
 }
 
 
 const Home: FC<IProps> = (props) => {
+  const [cards, setCards] = useState<ICard[]>(props.data.results)
+  const [info, setInfo] = useState<IInfo>(props.data.info)
+
+  const getNewCards = async (id:string | null) => {
+    if (typeof id !== null) {
+      const data:IPropsData = await getPage(id?.charAt(id.length - 1 ))
+      setCards(data.results);
+      setInfo(data.info);
+    }
+  }
+
   return (
+    <>
     <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-      {props.data.results.map(item => (
+      {cards.map(item => (
         <Card data={item} key={item.id} />
       ))}
     </div>
+    <div className={styles.pagination}>
+      <button className={styles.button} onClick={() => getNewCards(info.prev)} disabled={!info.prev}>Prev</button>
+      <button className={styles.button} onClick={() => getNewCards(info.next)} disabled={!info.next}>Next</button>
+    </div>
+    </>
   )
 }
 

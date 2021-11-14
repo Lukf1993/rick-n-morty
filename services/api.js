@@ -3,7 +3,6 @@ import { API_URL } from './config';
 
 
 const get = (collection, id) => {
-    console.log(collection)
   return axios
     .get(`${API_URL}/${collection}/${id || ''}`)
     .then((res) => {
@@ -11,6 +10,15 @@ const get = (collection, id) => {
     })
     .catch((err) => console.log(err));
 }
+
+export const getPage = (id) => {
+  return axios
+    .get(`${API_URL}/character?page=${id || ''}`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => console.log(err));
+};
 
 export const getAllCharacters = () => get('character');
 export const getSingleCharacter = (id) => get('character' , id);
