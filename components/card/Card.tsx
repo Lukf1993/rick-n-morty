@@ -14,7 +14,7 @@ export const Card: FC<IProps> = ({data}) => {
         <Link href={`/${data.id}`} passHref>
             <div className={styles.card}>
                 <div className={styles.imageWrapper}>
-                    <Image src={data.image} alt='' layout='fill'  />
+                    <Image priority src={data.image} alt='' layout='fill'  />
                 </div>
                 <div className={styles.wrapper}>
                     <h2 className={styles.title}>{data.name}</h2>
