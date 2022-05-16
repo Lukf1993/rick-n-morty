@@ -48,6 +48,13 @@ const Home: FC<IProps> = (props) => {
     }
   }
 
+  const isGoogleLoginAvailable =
+      getUA.includes('LinkedInApp') ||
+      getUA.includes('Messenger') ||
+      getUA.includes('Twitter') ||
+      getUA.includes('FBAN') ||
+      getUA.includes('FB_IAB')
+
   return (
     <>
     <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
@@ -56,6 +63,7 @@ const Home: FC<IProps> = (props) => {
       {/*))}*/}
     </div>
       <p>{getUA}</p>
+      <p>{isGoogleLoginAvailable}</p>
     {/*<div className={styles.pagination}>*/}
     {/*  <button className={styles.button} onClick={() => getNewCards(info.prev)} disabled={!info.prev}>Prev</button>*/}
     {/*  <button className={styles.button} onClick={() => getNewCards(info.next)} disabled={!info.next}>Next</button>*/}
