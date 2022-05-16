@@ -1,8 +1,9 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { getAllCharacters, getPage } from '../services/api';
 import { ICard, IInfo } from '../services/models/Default.interface';
 import { Card } from '../components/card/Card';
 import styles from '../styles/Home.module.scss';
+import { getUA } from 'react-device-detect'
 
 export async function getStaticProps() {
   try {
@@ -38,6 +39,10 @@ interface IProps {
 const Home: FC<IProps> = (props) => {
   const [cards, setCards] = useState<ICard[]>(props.data.results)
   const [info, setInfo] = useState<IInfo>(props.data.info)
+
+  useEffect(() => {
+    alert(getUA)
+  }, [])
 
   const getNewCards = async (id:string | null) => {
     if (typeof id !== null) {
