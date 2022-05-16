@@ -48,12 +48,9 @@ const Home: FC<IProps> = (props) => {
     }
   }
 
-  const isGoogleLoginAvailable =
-      getUA.includes('LinkedInApp') ||
-      getUA.includes('Messenger') ||
-      getUA.includes('Twitter') ||
-      getUA.includes('FBAN') ||
-      getUA.includes('FB_IAB')
+  const pattern = /.*(LinkedInApp|Messenger|Twitter|FBAN|FB_IAB).*/
+
+  const isGoogleLoginAvailable = pattern.test(getUA)
 
   return (
     <>
