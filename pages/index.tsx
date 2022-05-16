@@ -63,7 +63,8 @@ const Home: FC<IProps> = (props) => {
       {/*))}*/}
     </div>
       <p>{getUA}</p>
-      <p>{isGoogleLoginAvailable && 'dupa'}</p>
+      <p>{!isGoogleLoginAvailable && 'dupa1'}</p>
+      <p>{isGoogleLoginAvailable && 'dupa2'}</p>
     {/*<div className={styles.pagination}>*/}
     {/*  <button className={styles.button} onClick={() => getNewCards(info.prev)} disabled={!info.prev}>Prev</button>*/}
     {/*  <button className={styles.button} onClick={() => getNewCards(info.next)} disabled={!info.next}>Next</button>*/}
