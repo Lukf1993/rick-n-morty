@@ -62,10 +62,10 @@ const Home: FC<IProps> = (props) => {
       <p>{getUA}</p>
       <p>{!isGoogleLoginAvailable && 'dupa1'}</p>
       <p>{isGoogleLoginAvailable && 'dupa2'}</p>
-    {/*<div className={styles.pagination}>*/}
-    {/*  <button className={styles.button} onClick={() => getNewCards(info.prev)} disabled={!info.prev}>Prev</button>*/}
-    {/*  <button className={styles.button} onClick={() => getNewCards(info.next)} disabled={!info.next}>Next</button>*/}
-    {/*</div>*/}
+    <div className={styles.pagination}>
+      <button className={styles.button} onClick={() => getNewCards(info.prev)} disabled={!info.prev}>Prev</button>
+      <button className={styles.button} onClick={() => getNewCards(info.next)} disabled={!info.next}>Next</button>
+    </div>
     </>
   )
 }
