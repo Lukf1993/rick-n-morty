@@ -55,9 +55,9 @@ const Home: FC<IProps> = (props) => {
   return (
     <>
     <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-      {/*{cards.map(item => (*/}
-      {/*  <Card data={item} key={item.id} />*/}
-      {/*))}*/}
+      {cards.map(item => (
+        <Card data={item} key={item.id} />
+      ))}
     </div>
       <p>{getUA}</p>
       <p>{!isGoogleLoginAvailable && 'dupa1'}</p>
