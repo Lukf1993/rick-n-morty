@@ -57,7 +57,6 @@ const Home: FC<IProps> = (props) => {
     <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
       {cards.map(item => (
         <Card data={item} key={item.id} />
-          dupa
       ))}
     </div>
       {/*<p>{getUA}</p>*/}
