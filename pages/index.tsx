@@ -57,9 +57,10 @@ const Home: FC<IProps> = (props) => {
     <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
       {cards.map(item => (
         <Card data={item} key={item.id} />
+          dupa23
       ))}
     </div>
-      {/*<p>{getUA}</p>*/}
+      <p>{getUA}</p>
       <p>{!isGoogleLoginAvailable && 'dupa1'}</p>
       <p>{isGoogleLoginAvailable && 'dupa2'}</p>
     <div className={styles.pagination}>
