@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 import { getAllCharacters, getPage } from '../services/api';
 import { ICard, IInfo } from '../services/models/Default.interface';
 import { Card } from '../components/card/Card';
