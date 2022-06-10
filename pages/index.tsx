@@ -17,7 +17,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        data,fadsfsad
+        data,fadsfsadfasdf
       },
     };
   } catch (e) {
